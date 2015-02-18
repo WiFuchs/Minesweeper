@@ -3,7 +3,8 @@
 import de.bezier.guido.*;
 public final static int NUM_ROWS = 20;
 public final static int NUM_COLS = 20;
-public final static int TOTAL_BOMBS = 1;
+public final static int TOTAL_BOMBS = 30;
+boolean gameOver;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs; //ArrayList of just the minesweeper buttons that are mined
 
@@ -14,6 +15,8 @@ void setup ()
     
     // make the manager
     Interactive.make( this );
+
+    gameOver = false;
     
     bombs = new ArrayList<MSButton>();
     buttons = new MSButton[NUM_ROWS][NUM_COLS];
@@ -28,7 +31,7 @@ void setup ()
 }
 public void setBombs()
 {
-    for(int i=0; i<TOTAL_BOMBS; i++){
+    while(bombs.size()<TOTAL_BOMBS){
         int row = (int)(Math.random()*NUM_ROWS);
         int col = (int)(Math.random()*NUM_COLS);
         if(bombs.contains(buttons[row][col]) != true){
@@ -45,22 +48,80 @@ public void draw ()
 }
 public boolean isWon()
 {
-    for(int i=0; i<TOTAL_BOMBS; i++){
-        MSButton bomb = bombs.get(i);
-        if(!bomb.isMarked()){
-            return false;
+    if(!gameOver){
+        for(int i=0; i<TOTAL_BOMBS; i++){
+            MSButton bomb = bombs.get(i);
+            if(!bomb.isMarked()){
+                return false;
+            }
         }
+        return true;
     }
-    return true;
+    return false;
 }
 public void displayLosingMessage()
 {
-    //buttons[][].setMarked();
+    gameOver = true;
+    buttons[6][1].setMarked();
+    buttons[7][1].setMarked();
+    buttons[8][1].setMarked();
+    buttons[9][1].setMarked();
+    buttons[9][2].setMarked();
+    buttons[9][3].setMarked();
+    buttons[6][6].setMarked();
+    buttons[7][5].setMarked();
+    buttons[8][5].setMarked();
+    buttons[8][5].setMarked();
+    buttons[9][6].setMarked();
+    buttons[9][7].setMarked();
+    buttons[8][8].setMarked();
+    buttons[7][8].setMarked();
+    buttons[6][7].setMarked();
+    buttons[6][12].setMarked();
+    buttons[6][11].setMarked();
+    buttons[7][10].setMarked();
+    buttons[8][11].setMarked();
+    buttons[9][10].setMarked();
+    buttons[9][9].setMarked();
+    buttons[6][16].setMarked();
+    buttons[7][16].setMarked();
+    buttons[8][16].setMarked();
+    buttons[9][16].setMarked();
+    buttons[6][15].setMarked();
+    buttons[6][14].setMarked();
+    buttons[6][17].setMarked();
+    buttons[6][18].setMarked();
 }
 public void displayWinningMessage()
 {
-    println("Won");
-}
+    gameOver = true;
+    buttons[6][1].setMarked();
+    buttons[7][1].setMarked();
+    buttons[8][1].setMarked();
+    buttons[9][2].setMarked();
+    buttons[8][3].setMarked();
+    buttons[9][4].setMarked();
+    buttons[8][5].setMarked();
+    buttons[7][5].setMarked();
+    buttons[6][5].setMarked();
+    buttons[7][7].setMarked();
+    buttons[8][7].setMarked();
+    buttons[9][8].setMarked();
+    buttons[9][9].setMarked();
+    buttons[8][10].setMarked();
+    buttons[7][10].setMarked();
+    buttons[6][9].setMarked();
+    buttons[6][8].setMarked();
+    buttons[6][12].setMarked();
+    buttons[7][12].setMarked();
+    buttons[8][12].setMarked();
+    buttons[9][12].setMarked();
+    buttons[7][13].setMarked();
+    buttons[8][14].setMarked();
+    buttons[9][15].setMarked();
+    buttons[8][15].setMarked();
+    buttons[7][15].setMarked();
+    buttons[6][15].setMarked();}
 
 public class MSButton
 {
@@ -98,7 +159,6 @@ public class MSButton
         if(keyPressed==true){
             if(marked==true){
                 marked=false;
-                System.out.println(r + ", " + c);
             } else {
                 marked=true;
             }
@@ -146,6 +206,8 @@ public class MSButton
              fill(255,0,0);
         else if(clicked)
             fill( 200 );
+        else if(gameOver)
+            fill(200);
         else 
             fill( 100 );
 
