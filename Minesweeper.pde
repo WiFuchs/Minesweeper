@@ -156,7 +156,7 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        if(keyPressed==true){
+        if(markerMode==true){
             if(marked==true){
                 marked=false;
             } else {
