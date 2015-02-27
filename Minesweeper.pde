@@ -1,8 +1,8 @@
 
 
 import de.bezier.guido.*;
-public final static int NUM_ROWS = 15;
-public final static int NUM_COLS = 15;
+public final static int NUM_ROWS = 20;
+public final static int NUM_COLS = 20;
 public final static int TOTAL_BOMBS = 20;
 boolean gameOver;
 private MSButton[][] buttons; //2d array of minesweeper buttons
