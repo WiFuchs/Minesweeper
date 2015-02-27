@@ -156,11 +156,13 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        if(markerMode==true){
-            if(marked==true){
-                marked=false;
-            } else {
-                marked=true;
+        if(markerMode){
+            if(markerMode==true){
+               if(marked==true){
+                   marked=false;
+               } else {
+                  marked=true;
+                }
             }
         }
         else if(bombs.contains(this)){
