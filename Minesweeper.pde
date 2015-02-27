@@ -10,7 +10,7 @@ private ArrayList <MSButton> bombs; //ArrayList of just the minesweeper buttons 
 
 void setup ()
 {
-    size(200, 200);
+    size(400, 400);
     textAlign(CENTER,CENTER);
     
     // make the manager
@@ -132,8 +132,8 @@ public class MSButton
     
     public MSButton ( int rr, int cc )
     {
-        width = 200/NUM_COLS;
-        height = 200/NUM_ROWS;
+        width = 400/NUM_COLS;
+        height = 400/NUM_ROWS;
         r = rr;
         c = cc; 
         x = c*width;
