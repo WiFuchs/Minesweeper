@@ -5,7 +5,6 @@ public final static int NUM_ROWS = 20;
 public final static int NUM_COLS = 20;
 public final static int TOTAL_BOMBS = 30;
 boolean gameOver;
-markerMode=true;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs; //ArrayList of just the minesweeper buttons that are mined
 
@@ -157,7 +156,7 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        if(markerMode==true){
+        if(markingMode==true){
             if(marked==true){
                 marked=false;
             } else {
