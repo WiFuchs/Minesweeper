@@ -132,8 +132,8 @@ public class MSButton
     
     public MSButton ( int rr, int cc )
     {
-        width = 400/NUM_COLS;
-        height = 400/NUM_ROWS;
+        width = 200/NUM_COLS;
+        height = 200/NUM_ROWS;
         r = rr;
         c = cc; 
         x = c*width;
