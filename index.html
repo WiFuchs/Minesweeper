@@ -14,6 +14,11 @@
 		</header>
 		<script src="Minesweeper.pde" type="text/processing"></script>
 		<canvas id="Minesweeper">
+		<script type="text/javascript">
+			var canvas = document.getElementById('Minesweeper');
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		</script>
 		</canvas>
 	    <footer>
 		    Marking Modey: <input type="checkbox" onClick="setMarkingMode();">
