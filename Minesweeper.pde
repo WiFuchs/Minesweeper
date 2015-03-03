@@ -3,7 +3,7 @@
 import de.bezier.guido.*;
 public final static int NUM_ROWS = 20;
 public final static int NUM_COLS = 20;
-public final static int TOTAL_BOMBS = 20;
+public final static int TOTAL_BOMBS = 400;
 boolean gameOver;
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs; //ArrayList of just the minesweeper buttons that are mined
