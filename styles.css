@@ -12,9 +12,12 @@ body {
 }
 
 #button {
-	background-image: url('https://github.com/WiFuchs/Dice/blob/gh-pages/buttonBackground.jpg');background-repeat: repeat-x;
+	background-image: url('https://github.com/WiFuchs/Dice/blob/gh-pages/buttonBackground.jpg');
+	background-repeat: repeat-x;
 	height: 20px;
 	width: 80px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 header {
