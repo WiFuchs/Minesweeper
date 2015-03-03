@@ -11,9 +11,10 @@ body {
     margin-right: auto;
 }
 
-.button {
-	display:block;
-	background-image:url("buttonBackground.png");
+#button {
+	background-image: url('buttonBackground.jpg');background-repeat: repeat-x;
+	height: 20px;
+	width: 80px;
 }
 
 header {
